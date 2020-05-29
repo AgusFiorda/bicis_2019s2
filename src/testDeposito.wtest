@@ -1,6 +1,40 @@
+import bicis.*
+import accesorios.*
+import deposito.*
 
 test "testX" {
-
-	assert.that(true)
+	const bici1 = new Bicicleta()
+	bici1.rodado(28)
+	bici1.centimetros(150)
+	bici1.marca("Olmo")
+	bici1.contiene(farolito)
+	
+	const bici2= new Bicicleta()
+	bici2.rodado(26)
+	bici2.centimetros(110)
+	bici2.marca("Legnano")
+	bici2.contiene(farolito)
+	canasto.agregarVol(8)
+	morraldebici.agregarLargo(21)
+	morraldebici.tieneOjoDeGato()
+	bici2.contiene(canasto)
+	bici2.contiene(morraldebici)
+	
+	const bici3= new Bicicleta()
+	
+	bici3.rodado(20)
+	bici3.centimetros(90)
+	bici3.marca("Legnano")
+	morraldebici.agregarLargo(6)
+	morraldebici.noTieneOjoDeGato()
+	bici3.contiene(morraldebici)
+	
+	deposito.agregarBici(bici1)
+	deposito.agregarBici(bici2)
+	deposito.agregarBici(bici3)
+	
+	
+	assert.equals([28,26],deposito.bicisRapidas())
+	//assert.equals("Olmo", deposito.marca())
 
 }

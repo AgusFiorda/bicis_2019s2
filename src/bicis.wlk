@@ -8,7 +8,6 @@ class Bicicleta {
 	var carga=0
 	var peso=0
 	var velcrucero=0
-	
 	var accesorios=[]
 	
 	method contiene(acc){
@@ -26,6 +25,13 @@ class Bicicleta {
 	method altura(){
 		altura+=rod*2.5+15
 		return altura
+	}
+	method mostrarRod(){
+		return rod
+	}
+	
+	method mostrarMarca(){
+		return marca
 	}
 	method velCru(){
 		if(cm>120){
