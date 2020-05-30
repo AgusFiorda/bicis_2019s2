@@ -3,9 +3,9 @@ import accesorios.*
 import deposito.*
 test "testX" {
 	const bici1 = new Bicicleta()
-	bici1.rodado(28)
-	bici1.centimetros(150)
-	bici1.marca("Olmo")
+	bici1.rod(28)
+	bici1.largo(150)
+	bici1.marcas(olmo)
 	bici1.contiene(farolito)
 	assert.equals(85,bici1.altura())
 	assert.equals(34,bici1.velCru())
@@ -13,12 +13,13 @@ test "testX" {
 	assert.equals(14.5,bici1.peso())
 	assert.that(bici1.tieneLuz())
 	assert.equals(1,bici1.accLivianos())
-	
+	assert.equals(olmo,bici1.marcas()) //era solo para probar el var property ! :)
+	 
 	const bici2= new Bicicleta()
 	
-	bici2.rodado(26)
-	bici2.centimetros(110)
-	bici2.marca("Legnano")
+	bici2.rod(26)
+	bici2.largo(110)
+	bici2.marcas(legnano)
 	bici2.contiene(farolito)
 	canasto.agregarVol(8)
 	morraldebici.agregarLargo(21)
@@ -34,9 +35,9 @@ test "testX" {
 	
 	const bici3= new Bicicleta()
 	
-	bici3.rodado(20)
-	bici3.centimetros(90)
-	bici3.marca("Legnano")
+	bici3.rod(20)
+	bici3.largo(90)
+	bici3.marcas(legnano)
 	morraldebici.agregarLargo(6)
 	morraldebici.noTieneOjoDeGato()
 	bici3.contiene(morraldebici)
@@ -46,5 +47,8 @@ test "testX" {
 	assert.equals(11.2,bici3.peso())
 	assert.notThat(bici3.tieneLuz())
 	assert.equals(0,bici3.accLivianos())
+	
+	
+	
 	
 }

@@ -4,15 +4,16 @@ import deposito.*
 
 test "testX" {
 	const bici1 = new Bicicleta()
-	bici1.rodado(28)
-	bici1.centimetros(150)
-	bici1.marca("Olmo")
+	bici1.rod(28)
+	bici1.largo(150)
+	bici1.marcas(olmo)
 	bici1.contiene(farolito)
 	
 	const bici2= new Bicicleta()
-	bici2.rodado(26)
-	bici2.centimetros(110)
-	bici2.marca("Legnano")
+	
+	bici2.rod(26)
+	bici2.largo(110)
+	bici2.marcas(legnano)
 	bici2.contiene(farolito)
 	canasto.agregarVol(8)
 	morraldebici.agregarLargo(21)
@@ -22,9 +23,9 @@ test "testX" {
 	
 	const bici3= new Bicicleta()
 	
-	bici3.rodado(20)
-	bici3.centimetros(90)
-	bici3.marca("Legnano")
+	bici3.rod(20)
+	bici3.largo(90)
+	bici3.marcas(legnano)
 	morraldebici.agregarLargo(6)
 	morraldebici.noTieneOjoDeGato()
 	bici3.contiene(morraldebici)
@@ -33,8 +34,17 @@ test "testX" {
 	deposito.agregarBici(bici2)
 	deposito.agregarBici(bici3)
 	
-	
+	 
 	assert.equals([28,26],deposito.bicisRapidas())
-	//assert.equals("Olmo", deposito.marca())
+	assert.equals(#{legnano,olmo}, deposito.marca()) // Nose si esta bien resulto asi o si hay otra forma mejor
+	assert.notThat(deposito.esNocturno())
+	assert.that(deposito.puedeLlevarCarga(10))
+	assert.notThat(deposito.puedeLlevarCarga(50))
+	
+	//mas sobre deposito
 
+	
+	assert.equals(olmo,deposito.biciMasRapida())
+	assert.equals(0,deposito.cargaTotBicisLargas()) // no hay ninguna con mas de 170cm por eso da "0"
+	//assert.equals(3,deposito.bicisSinAcc())
 }

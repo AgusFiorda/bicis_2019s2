@@ -1,9 +1,9 @@
 import accesorios.*
 
 class Bicicleta {
-	var rod=0
-	var cm=0
-	var marca=""
+	var property rod
+	var property largo=0
+	var property marcas=[]
 	var altura=0
 	var carga=0
 	var peso=0
@@ -13,28 +13,17 @@ class Bicicleta {
 	method contiene(acc){
 		accesorios.add(acc)
 	}
-	method rodado(setRodado){
-		rod=setRodado
+	method accesorios(){
+		return accesorios
 	}
-	method centimetros(setCm){
-		cm=setCm
-	}
-	method marca(setMarca){
-		marca=setMarca
-	}
+	
 	method altura(){
 		altura+=rod*2.5+15
 		return altura
 	}
-	method mostrarRod(){
-		return rod
-	}
 	
-	method mostrarMarca(){
-		return marca
-	}
 	method velCru(){
-		if(cm>120){
+		if(largo>120){
 			 velcrucero+=rod+6
 			 return velcrucero
 		}
@@ -58,5 +47,13 @@ class Bicicleta {
 	method accLivianos(){
 		return accesorios.count({cosa=>cosa.peso()<1})
 	}
+	
+}
+
+
+object olmo{
+	
+}
+object legnano{
 	
 }
