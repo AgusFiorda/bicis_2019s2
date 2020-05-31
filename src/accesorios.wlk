@@ -1,7 +1,7 @@
 object farolito {
 	const peso=0.5
 	const carga=0
-	const luz=true
+	
 	method peso(){
 		return peso
 	}
@@ -9,21 +9,16 @@ object farolito {
 		return carga
 	}
 	method esLuminoso(){
-		return luz
+		return true
 	}
 }
 
 object canasto {
-	var vol=0.5
+	var property vol
 	var carga=0
 	const luz=false
 	var peso=0
-	method agregarVol(setVol){
-		vol=setVol
-	}
-	method volumen(){
-		return vol
-	}
+
 	method peso(){
 		peso=vol/10
 		return peso
@@ -41,13 +36,9 @@ object canasto {
 object morraldebici {
 	const peso=1.2
 	var carga=0
-	const luz=true
-	var largo=0
+	var property largo=0
 	var ojo=true
 	
-	method agregarLargo(setLargo){
-		largo=setLargo
-	}
 	method peso(){
 		return peso
 	}
@@ -67,3 +58,11 @@ object morraldebici {
 		}return ojo
 	}
 }
+/*
+ para agregar un nuevo tipo de accesorio habria que crear 
+ los objetos que se deseen agregar con sus caracteristicas.
+ 
+el contrato bici no cambia ya que sabe reaccionar a los diferentes 
+accesorios independientemente de cual sea.
+ 
+ */

@@ -8,6 +8,7 @@ object deposito {
 	var marcas=#{}
 	var largo=0
 	var cargTot170cm=[]
+	var aux=false
 	
 	method agregarBici(bici){
 		bicicletas.add(bici)
@@ -55,17 +56,32 @@ object deposito {
 	}
 	
 	method sonCompanieras(b1,b2){
+		
 		largo=b1.largo()-b2.largo()
 		if(b1!=b2){
 		if(b1.marcas()==b2.marcas()){
-			if(largo==0){return true}
-			if(largo<0){return (largo*-1)<10 }
-			return largo<=10
-		}return false
-		}return false
+			if(largo==0){aux=true return true}
+			if(largo<0){ if((largo*-1)<10){
+				aux=true
+				return true
+			} return false
+			}
+			
+			if( largo<=10 ){
+				aux=true
+				return true
+			}return false
+		}
+		return false
+		}
+		return false
 		
 	
 }
+
+	method hayCompanieras(){
+		return aux
+	}
 
 
 

@@ -15,8 +15,8 @@ test "testX" {
 	bici2.largo(110)
 	bici2.marcas(legnano)
 	bici2.contiene(farolito)
-	canasto.agregarVol(8)
-	morraldebici.agregarLargo(21)
+	canasto.vol(8)
+	morraldebici.largo(21)
 	morraldebici.tieneOjoDeGato()
 	bici2.contiene(canasto)
 	bici2.contiene(morraldebici)
@@ -26,7 +26,7 @@ test "testX" {
 	bici3.rod(20)
 	bici3.largo(90)
 	bici3.marcas(legnano)
-	morraldebici.agregarLargo(6)
+	morraldebici.largo(6)
 	morraldebici.noTieneOjoDeGato()
 	bici3.contiene(morraldebici)
 	
@@ -60,7 +60,7 @@ test "Son compañeras"{
 	const b2= new Bicicleta()
 	
 	b2.rod(20)
-	b2.largo(120)
+	b2.largo(115)
 	b2.marcas(legnano)
 	
 	
@@ -68,6 +68,10 @@ test "Son compañeras"{
 	deposito.agregarBici(b1)
 	deposito.agregarBici(b2)
 	assert.that(deposito.sonCompanieras(b2, b1))
+	
+	//hay compañeras?
+	
+	assert.that(deposito.hayCompanieras())
 }
 
 test "mas sobre deposito"{
@@ -84,8 +88,8 @@ test "mas sobre deposito"{
 	bici2.largo(110)
 	bici2.marcas(legnano)
 	bici2.contiene(farolito)
-	canasto.agregarVol(8)
-	morraldebici.agregarLargo(21)
+	canasto.vol(8)
+	morraldebici.largo(21)
 	morraldebici.tieneOjoDeGato()
 	bici2.contiene(canasto)
 	bici2.contiene(morraldebici)
@@ -95,7 +99,7 @@ test "mas sobre deposito"{
 	bici3.rod(20)
 	bici3.largo(90)
 	bici3.marcas(legnano)
-	morraldebici.agregarLargo(6)
+	morraldebici.largo(6)
 	morraldebici.noTieneOjoDeGato()
 	bici3.contiene(morraldebici)
 	
