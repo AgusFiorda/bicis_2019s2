@@ -6,9 +6,9 @@ object deposito {
 	var bicicletas=[]
 	var bicisRap=[]
 	var marcas=#{}
-	var marcaRap=[]
+	var largo=0
 	var cargTot170cm=[]
-	var bicisSinAcc=[]
+	
 	method agregarBici(bici){
 		bicicletas.add(bici)
 	}
@@ -36,7 +36,7 @@ object deposito {
 	
 	
 	method biciMasRapida(){
-		//marcaRap+= bicicletas.map
+		
 		return bicicletas.max({cosa=>cosa.velCru()}).marcas()
 		
 	}
@@ -46,7 +46,27 @@ object deposito {
 	}
 	
 	method bicisSinAcc(){
-		bicisSinAcc+= bicicletas.map({cosa=>cosa.accesorios()})
-		return bicisSinAcc.count()
+		
+		return bicicletas.count({cosa=>cosa.mostrarAccesorios().isEmpty()})
+			
+		
+		
+			
 	}
+	
+	method sonCompanieras(b1,b2){
+		largo=b1.largo()-b2.largo()
+		if(b1!=b2){
+		if(b1.marcas()==b2.marcas()){
+			if(largo==0){return true}
+			if(largo<0){return (largo*-1)<10 }
+			return largo<=10
+		}return false
+		}return false
+		
+	
+}
+
+
+
 }

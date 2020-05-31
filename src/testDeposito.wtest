@@ -30,9 +30,12 @@ test "testX" {
 	morraldebici.noTieneOjoDeGato()
 	bici3.contiene(morraldebici)
 	
+	//const bici4= new Bicicleta()
+	
 	deposito.agregarBici(bici1)
 	deposito.agregarBici(bici2)
 	deposito.agregarBici(bici3)
+	//deposito.agregarBici(bici4)
 	
 	 
 	assert.equals([28,26],deposito.bicisRapidas())
@@ -41,10 +44,79 @@ test "testX" {
 	assert.that(deposito.puedeLlevarCarga(10))
 	assert.notThat(deposito.puedeLlevarCarga(50))
 	
+
+}
+
+test "Son compañeras"{
+	
+	const b1= new Bicicleta()
+	
+	b1.rod(26)
+	b1.largo(110)
+	b1.marcas(legnano)
+	
+	
+	
+	const b2= new Bicicleta()
+	
+	b2.rod(20)
+	b2.largo(120)
+	b2.marcas(legnano)
+	
+	
+	
+	deposito.agregarBici(b1)
+	deposito.agregarBici(b2)
+	assert.that(deposito.sonCompanieras(b2, b1))
+}
+
+test "mas sobre deposito"{
+	
+	const bici1 = new Bicicleta()
+	bici1.rod(28)
+	bici1.largo(150)
+	bici1.marcas(olmo)
+	bici1.contiene(farolito)
+	
+	const bici2= new Bicicleta()
+	
+	bici2.rod(26)
+	bici2.largo(110)
+	bici2.marcas(legnano)
+	bici2.contiene(farolito)
+	canasto.agregarVol(8)
+	morraldebici.agregarLargo(21)
+	morraldebici.tieneOjoDeGato()
+	bici2.contiene(canasto)
+	bici2.contiene(morraldebici)
+	
+	const bici3= new Bicicleta()
+	
+	bici3.rod(20)
+	bici3.largo(90)
+	bici3.marcas(legnano)
+	morraldebici.agregarLargo(6)
+	morraldebici.noTieneOjoDeGato()
+	bici3.contiene(morraldebici)
+	
+	const bici4= new Bicicleta()
+	bici4.rod(28)
+	bici4.largo(150)
+	bici4.marcas(legnano)
+	
+	
+	
+	deposito.agregarBici(bici1)
+	deposito.agregarBici(bici2)
+	deposito.agregarBici(bici3)
+	deposito.agregarBici(bici4)
+	
 	//mas sobre deposito
 
 	
 	assert.equals(olmo,deposito.biciMasRapida())
 	assert.equals(0,deposito.cargaTotBicisLargas()) // no hay ninguna con mas de 170cm por eso da "0"
-	//assert.equals(3,deposito.bicisSinAcc())
+	assert.equals(1,deposito.bicisSinAcc())
+	
+	
 }

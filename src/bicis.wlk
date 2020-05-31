@@ -13,7 +13,7 @@ class Bicicleta {
 	method contiene(acc){
 		accesorios.add(acc)
 	}
-	method accesorios(){
+	method mostrarAccesorios(){
 		return accesorios
 	}
 	
