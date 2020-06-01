@@ -1,7 +1,7 @@
 import bicis.*
 import accesorios.*
 import deposito.*
-
+/*
 test "testX" {
 	const bici1 = new Bicicleta()
 	bici1.rod(28)
@@ -69,9 +69,12 @@ test "Son compañeras"{
 	deposito.agregarBici(b2)
 	assert.that(deposito.sonCompanieras(b2, b1))
 	
+	//desafios
 	//hay compañeras?
 	
 	assert.that(deposito.hayCompanieras())
+	assert.equals(2,deposito.parejasCompanieras())
+	
 }
 
 test "mas sobre deposito"{
@@ -123,4 +126,70 @@ test "mas sobre deposito"{
 	assert.equals(1,deposito.bicisSinAcc())
 	
 	
+}
+*/
+test "Se hizo la luz"{
+		const b1= new Bicicleta()
+	
+	b1.rod(26)
+	b1.largo(110)
+	b1.marcas(legnano)
+	b1.contiene(morraldebici)
+	morraldebici.noTieneOjoDeGato()
+	
+	
+	const b2= new Bicicleta()
+	
+	b2.rod(20)
+	b2.largo(115)
+	b2.marcas(legnano)
+	b2.contiene(morraldebici)
+	morraldebici.noTieneOjoDeGato()
+	
+			const b3= new Bicicleta()
+	
+	b3.rod(26)
+	b3.largo(110)
+	b3.marcas(legnano)
+	b3.contiene(farolito)
+	
+	
+	
+	const b4= new Bicicleta()
+	
+	b4.rod(20)
+	b4.largo(115)
+	b4.marcas(legnano)
+	b4.contiene(farolito)
+
+	const b5= new Bicicleta()
+	
+	b5.rod(20)
+	b5.largo(115)
+	b5.marcas(legnano)
+	b5.contiene(farolito)
+	
+		const b6= new Bicicleta()
+	
+	b6.rod(20)
+	b6.largo(115)
+	b6.marcas(legnano)
+	b6.contiene(morraldebici)
+	morraldebici.noTieneOjoDeGato()
+	
+	
+	deposito.agregarBici(b1) //no tiene luz
+	deposito.agregarBici(b2)//no tiene luz
+	deposito.agregarBici(b3)// tiene luz 
+	deposito.agregarBici(b4)//tiene luz
+	deposito.agregarBici(b5)//tiene luz
+	//deposito.agregarBici(b6)//no tiene luz
+
+	assert.that(deposito.seHizoLaLuz())
+//assert.notThat(deposito.seHizoLaLuz())
+
+
+
+
+
 }
